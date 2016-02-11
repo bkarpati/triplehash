@@ -53,7 +53,10 @@ def parse_input(fileName):
 	#print("customers",list_of_order[0])
 
 	file_object.close()
-	
+
+'''
+This function sets the simulation parameters
+'''
 def parse_param(simulation_params):
 	global number_of_row, number_of_row, number_of_drones, max_sim_time, max_drone_load
 	number_of_row = int(simulation_params[0])
@@ -87,6 +90,9 @@ def parse_warehouse(file_object):
 		list_of_warehouses.append(wareHouse_object)
 
 
+'''
+This function parses the customer orders
+'''
 def parse_customer_order(file_object):
 	global total_customers, list_of_order
 	for i in range(0, total_customers):
