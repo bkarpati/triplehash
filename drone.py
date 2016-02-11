@@ -1,10 +1,12 @@
 
 import numpy
+import input_parser as ip
 
 def closest_wharehouse(self, orders, wharehouses):
 	
 	closest_orders = {}
 	# Finds the closest orders for wach wharehouse
+	orders = 
 	for order in orders:
 		L = []
 		for wharehouse in wharehouses:
@@ -33,6 +35,22 @@ def closest_wharehouse(self, orders, wharehouses):
 				exc.append((i, num))
 		exc_min[key] = (need, exc)
 
-	return closest_orders, exc_min
+	return (closest_orders, exc_min)
 
-		
+def which_whearehouse(self, closest_orders, exec_min):
+	# Wherehouse 
+
+def main(self):
+	input1 = ip.parse_input("busy_day.in")
+	number_of_row = input1[0]
+	number_of_col  = input1[1]
+	number_of_drones = input1[2]
+	max_sim_time = input1[3] 
+	max_drone_load = input1[4] 
+	total_product_type = input1[5] 
+	weight_of_product = input1[6] 
+	list_of_warehouses = input1[7] 
+	total_customers = input1[8] 
+	list_of_order = input1[9]
+
+	tup1 = closest_wharehouse(list_of_order, list_of_warehouses 
