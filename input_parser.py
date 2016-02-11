@@ -1,4 +1,4 @@
-from warehouse import WareHouse 
+from warehouse import WareHouse, Customer_order 
 
 #product type start with 
 #
@@ -30,7 +30,7 @@ def parse_input(fileName):
 	#parses the simulation parameters
 	parse_param(simulation_param.split())
 
-	#total product and weight of products
+	#parsing total product and weight of products
 	product = file_object.readline()
 	global total_product_type, weight_of_product
 	total_product_type = int(product) 
@@ -50,7 +50,8 @@ def parse_input(fileName):
 	no_customers = file_object.readline()
 	total_customers = int(no_customers)
 	parse_customer_order(file_object)
-	print("customers",total_customers)
+	#print("customers",list_of_order[0])
+
 	file_object.close()
 	
 def parse_param(simulation_params):
@@ -88,3 +89,14 @@ def parse_warehouse(file_object):
 
 def parse_customer_order(file_object):
 	global total_customers, list_of_order
+	for i in range(0, total_customers):
+		position = (file_object.readline()).split()
+		x_pos = int(position[0])
+		y_pos = int(position[1])
+		total_product = file_object.readline()
+		total_product = int(total_product)
+		pos = (x_pos,y_pos)
+		customer_object = Customer_order(i,total_product,pos)
+		item_ordered = file_object.readline()
+		customer_object.set_list_of_order_product(item_ordered.split())
+		list_of_order.append(customer_object)

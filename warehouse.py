@@ -17,12 +17,19 @@ class WareHouse():
 
 class Customer_order():
 
-	def __init__(self):
-		self.customer_id = None
-		self.total_ordered_product = None
+	def __init__(self,id,total_ordered_product,pos):
+		self.customer_id = id
+		self.total_ordered_product = total_ordered_product
 		self.list_of_orders = list()
+		self.x_pos = pos[0]
+		self.y_pos = pos[1]
 
-
+	def set_list_of_order_product(self, list_of_orders):
+		total_product = len(list_of_orders)
+		for i in range(0, total_product):
+			product_value = int(list_of_orders[i])
+			self.list_of_orders.append(product_value)
+		
 class Order():
 
 	def __init__(self):
